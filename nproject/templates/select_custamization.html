@@ -1,0 +1,119 @@
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+  <table>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="main_content">
+
+
+
+          <form  method="post">
+            {% csrf_token %} 
+            <div class="col-md-12">
+              <label for="inputState" class="form-label">brand</label>
+              <select name="brand" class="form-select">
+              <option  src="{% static 'image/1.JPG' %}" class="d-block w-100 " alt="...">Apple </option>
+              <option>Google</option>
+              <option>Samsung</option>
+              <option>Sony</option>
+              <option>Lg</option>
+              <a href="#">
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20200630132503/iflag.jpg"
+                width="20" height="15"> India</a>
+              </select>
+          </div>
+          <div class="col-md-12">
+              <label for="inputState" class="form-label">size of screen</label>
+              <select name="size_of_screen" class="form-select">
+              <option>4inch</option>
+              <option>4.6inch</option>
+              <option>5inch</option>
+              <option>5.5inch</option>
+              <option>6inch</option>
+              </select>
+          </div>
+        
+          <div class="col-md-12">
+              <label for="inputState" class="form-label">proceseor</label>
+              <select name="proceseor" class="form-select">
+              <option>Apple A14 Bionic</option>
+              <option>Snapdragon 888</option>
+              <option>Exynos 2100</option>
+              <option>Kirin 9000</option>
+              <option>Dimensity 9000</option>
+              </select>
+          </div>
+          <div class="col-md-12">
+              <label for="inputState" class="form-label">ram</label>
+              <select name="ram" class="form-select">
+              
+              <option>4gb</option>
+              <option>8gb</option>
+              <option>12gb</option>
+              <option>16gb</option>
+              </select>
+          </div>
+              <div class="col-md-12">
+              <label for="inputState" class="form-label">camera</label>
+              <select name="camera" class="form-select">
+              <option>8</option>
+              <option>12</option>
+              <option>16</option>
+              <option>32</option>
+              <option>64</option>
+              </select>
+          </div>
+          
+         
+          
+            <input type="submit" >
+            <div class="alert alert-primary" role="alert">
+                                
+              {{massage}}{{id}}
+        
+            </div>
+                  
+        
+        
+          </form>
+          
+        </div>  
+
+      </div>
+      <div class="col-sm-8">
+        <div class="container">
+          <!-- Content here -->
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+              <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <img src="{% static 'image/1.JPG' %}" class="d-block w-100 " alt="...">
+              </div>
+              <div class="carousel-item">
+                  <img src="{% static 'image/2.JPG' %}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                  <img src="{% static 'image/3.JPG' %}" class="d-block w-100" alt="...">
+              </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+              </button>
+          </div>
+
+      </div>
+    </div>
+  </table>
+
+{% endblock %}
+

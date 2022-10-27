@@ -1,0 +1,43 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block content %}
+    <table class="table table-dark table-striped">
+        <tr>
+            <th>product id</th>
+            <th>Brand</th>
+            <th>Ram</th>
+            <th>Camera</th>
+            <th>Processor</th>
+            <th>for Buy</th>
+            
+
+        </tr>
+        {% for product in items %}
+        <tr>
+            <td>{{product.id}}</td>
+            <td>{{product.brand}}</td>
+            <td>{{product.ram}}</td>
+            <td>{{product.camera}}</td>
+            <td>{{product.proceseor}}</td>
+            
+            <td>  
+                
+                <form action="{% url 'ordered'  %}" method="post">
+                    {% csrf_token %}
+                    <input type="text" hidden name='product' value="{{product.id}}">
+                    <input type="submit" value="Add to cart">
+                </form>
+            </td>
+            
+            
+               
+        </tr>
+
+        
+   
+    {% endfor %}
+    </table>
+   
+{% endblock %}
